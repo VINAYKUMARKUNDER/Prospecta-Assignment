@@ -1,0 +1,89 @@
+Q2:-- Theoretical Challenge-:
+
+Ans:-  First of change this String to String array using split(",") method and after check number and also check sell value using own farmula and put this.
+
+package com.masai;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
+
+class Main {
+	public static void main(String args[]) throws IOException {
+
+		BufferedReader bi = new BufferedReader(new InputStreamReader(System.in));
+
+		String[] strNums = bi.readLine().split(",");
+
+		Map<String, Integer> map = new HashMap<>();
+
+		for (String s : strNums) {
+			String key = s.substring(1, 3);
+//	        		System.out.println(s);
+
+			if (s.charAt(5) == '=') {
+
+				String subStr = s.substring(6, s.length());
+				
+				char[] stringArray = subStr.toCharArray();
+				String[] split = new String[2];
+				String ax="";
+				int px=0;
+				
+				for(char c:stringArray) {
+					if(c=='+') {
+						split[px++]=ax;
+						ax="";
+					}else {
+						ax+=c;
+					}
+				}
+				
+				
+
+				int x1 = 0;
+				if (Character.isDigit(split[0].charAt(0))) {
+					x1 = Integer.parseInt(split[0]);
+				} else {
+
+					try {
+						x1 = map.get(split[0]);
+
+					} catch (Exception e) {
+						System.out.println("Key Not Found..");
+					}
+
+				}
+				
+				
+				
+				int x2 = 0;
+				if (Character.isDigit(split[1].charAt(0))) {
+					System.out.println(split[1]);
+					x1 = Integer.parseInt(split[1]);
+				} else {
+
+					try {
+						x2 = map.get(split[1]);
+
+					} catch (Exception e) {
+						System.out.println("Key Not Found..");
+					}
+
+				}
+				
+				int mx = x1+x2;
+				map.put(key, mx);
+
+			} else {
+				map.put(key, 0);
+			}
+
+		}
+		
+		System.out.println(map);
+
+	}
+}
