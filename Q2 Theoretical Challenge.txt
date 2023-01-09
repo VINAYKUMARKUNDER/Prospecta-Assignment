@@ -1,6 +1,13 @@
 Q2:-- Theoretical Challenge-:
 
-Ans:-  First of change this String to String array using split(",") method and after check number and also check sell value using own farmula and put this.
+Ans:-  First of take input using bufferReadder mathod and  change this String to String array using split(",") 
+	and tak one map class and start one for loop and run String Array each Elemeent and put in map class
+when we are put in map class one elem then it also check this elem or single are not if single then put simanytuly using put method or 
+when this value is start '=' sign then chek who's sign avel and also convert all value in integer and solve this all value using paresnting sign in element
+and after convrting all elem in number then put this value in map using .put method..
+
+
+this is my saluation......
 
 package com.masai;
 
